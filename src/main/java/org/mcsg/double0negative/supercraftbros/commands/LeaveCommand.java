@@ -1,5 +1,6 @@
 package org.mcsg.double0negative.supercraftbros.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.mcsg.double0negative.supercraftbros.GameManager;
 
@@ -10,6 +11,7 @@ public class LeaveCommand implements SubCommand{
 		int game = GameManager.getInstance().getPlayerGameId(player);
 		if(game != -1){
 			GameManager.getInstance().getGame(game).removePlayer(player, false);
+			player.sendMessage(ChatColor.GREEN + "You have left the game");
 		}
 		return true;
 	}
