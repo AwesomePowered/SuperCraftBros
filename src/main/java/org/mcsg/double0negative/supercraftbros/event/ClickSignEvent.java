@@ -1,6 +1,5 @@
 package org.mcsg.double0negative.supercraftbros.event;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -8,7 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.mcsg.double0negative.supercraftbros.Game;
 import org.mcsg.double0negative.supercraftbros.GameManager;
@@ -22,7 +20,7 @@ public class ClickSignEvent implements Listener{
         
 
         Block clickedBlock = e.getClickedBlock(); 
-        if(!(clickedBlock.getType()==Material.SIGN || clickedBlock.getType()==Material.SIGN_POST || clickedBlock.getType()==Material.WALL_SIGN)) return;
+        if(!(clickedBlock.getType()==Material.SIGN_POST || clickedBlock.getType()==Material.WALL_SIGN)) return;
         Sign thisSign = (Sign) clickedBlock.getState();
         String[] lines = thisSign.getLines();
         if(lines[0].equalsIgnoreCase("[class]")){
@@ -36,10 +34,11 @@ public class ClickSignEvent implements Listener{
         	Game g = GameManager.getInstance().getGame(game);
         	g.addPlayer(e.getPlayer());
         }
-	
-		
-	}
-	
-    
-	
+        else if (lines[0].equalsIgnoreCase("[leave]")) {
+        	int game = GameManager.getInstance().getPlayerGameId(e.getPlayer());
+    		if(game != -1){
+    			GameManager.getInstance().getGame(game).removePlayer(e.getPlayer(), false);
+    		}
+        }
+	}	
 }

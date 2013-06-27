@@ -83,7 +83,7 @@ public class Game {
 
 			players.put(p ,3 );
 			p.setGameMode(GameMode.SURVIVAL);
-			p.setHealth(20); p.setFoodLevel(20);
+			p.setHealth(p.getMaxHealth()); p.setFoodLevel(20);
 
 			TabAPI.setPriority(GameManager.getInstance().getPlugin(), p, 2);
 			p.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "Joined arena " + gameID + ". Select a class! \nHit tab for HUD!");
@@ -135,10 +135,10 @@ public class Game {
 				public void run() {
 					if (count > 0) {
 						if (count % 10 == 0) {
-							msgAll(ChatColor.BLUE + "Game starting in "+count);
+							msgAll(ChatColor.BLUE + "Game starting in " + count);
 						}
 						if (count < 6) {
-							msgAll(ChatColor.BLUE + "Game starting in "+count);
+							msgAll(ChatColor.BLUE + "Game starting in " + count);
 						}
 						count--;
 					} else {
@@ -189,6 +189,7 @@ public class Game {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	public void playerEliminate(Player p){
 		started = false;
 		msgAll(ChatColor.DARK_RED + p.getName() + " has been eliminated!");
@@ -225,6 +226,7 @@ public class Game {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public void gameEnd(){
 		/*for(Entity e:SettingsManager.getGameWorld(gameID).getEntities()){
 			if(arena.containsBlock(e.getLocation())){
