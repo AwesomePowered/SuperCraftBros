@@ -46,7 +46,6 @@ public class BlazeClass extends PlayerClassBase {
 		ItemStack i1 = new ItemStack(Material.BOW);
 		i1.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 1);
 		i1.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
-		i1.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
 		i1.addUnsafeEnchantment(Enchantment.DURABILITY, 2);
 
 		i.addItem(i1);
@@ -56,7 +55,7 @@ public class BlazeClass extends PlayerClassBase {
 		i2.addUnsafeEnchantment(Enchantment.KNOCKBACK, 1);
 		i.addItem(i2);
 
-		i.addItem(new ItemStack(Material.ARROW, 1));
+		i.addItem(new ItemStack(Material.ARROW, 20));
 
 
 

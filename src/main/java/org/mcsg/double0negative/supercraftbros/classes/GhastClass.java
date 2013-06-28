@@ -19,6 +19,7 @@ public class GhastClass extends PlayerClassBase{
 		// TODO Auto-generated constructor stub
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override 
 	public void PlayerSpawn(){
 		player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 88000, 4));
@@ -47,7 +48,7 @@ public class GhastClass extends PlayerClassBase{
 		i.addItem(i1);
 
 		i.addItem(new ItemStack(Material.FIREBALL));
-
+		
 		player.updateInventory();
 
 	}

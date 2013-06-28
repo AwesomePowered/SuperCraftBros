@@ -162,8 +162,8 @@ public class Game {
 			//int prev = pClasses.keySet().size();
 			pClasses.put(player, playerClass);
 			updateTabAll();
-			if(!started && pClasses.keySet().size()>= 4 && players.size() >= 4 ){
-				countdown(60);
+			if(!started && pClasses.keySet().size()>= 3 && players.size() >= 3 ){
+				countdown(30);
 				started = true;
 			}
 		}

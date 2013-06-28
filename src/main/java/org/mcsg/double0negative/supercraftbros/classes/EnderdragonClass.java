@@ -38,7 +38,7 @@ public class EnderdragonClass extends PlayerClassBase{
 				player.setVelocity(player.getLocation().getDirection().multiply(2));
 				Random r = new Random();
 				int h = player.getHealth();
-				player.setHealth(20);
+				player.setHealth(player.getMaxHealth());
 				player.getWorld().createExplosion(player.getLocation().add(r.nextInt(6) - 3, r.nextInt(6) - 3, r.nextInt(6) - 3), 2);
 				player.setHealth(h);
 				fly++;
@@ -73,10 +73,6 @@ public class EnderdragonClass extends PlayerClassBase{
 
 				}
 			}
-		}, 0, 1);
-		
-		
-	}
-	
-	
+		}, 0, 1);	
+	}	
 }
