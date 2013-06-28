@@ -4,6 +4,9 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Wither;
+import org.bukkit.entity.WitherSkull;
+import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
@@ -29,6 +32,7 @@ public class WitherClass extends PlayerClassBase{
 	}
 	
 	
+	@SuppressWarnings("deprecation")
 	@Override 
 	public void PlayerSpawn(){
 		player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 8000, 4));
@@ -52,16 +56,24 @@ public class WitherClass extends PlayerClassBase{
 				
 		
 		ItemStack i1 = new ItemStack(Material.BOW);
-		i1.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
+		i1.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 5);
 		i1.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
+		i1.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 13);
 		i.addItem(i1);
 		
-		i.addItem(new ItemStack(Material.ARROW));
-		
+		i.addItem(new ItemStack(Material.ARROW, 32));
 		
 		player.updateInventory();
-		
-		
+	}
+	
+	
+	public void onPewPew(EntityShootBowEvent ev){
+		if (ev.getEntity() instanceof Player) {
+			Player p = (Player) ev.getEntity();
+			if (p.getItemInHand().getEnchantmentLevel(Enchantment.DAMAGE_UNDEAD) == 15);
+			ev.setCancelled(true);
+			(p.launchProjectile(WitherSkull.class)).setVelocity(ev.getProjectile().getVelocity());
+		}
 	}
 	
 	public WitherClass newInstance(Player p){
