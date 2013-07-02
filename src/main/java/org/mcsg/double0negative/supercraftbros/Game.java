@@ -83,7 +83,7 @@ public class Game {
 
 			players.put(p ,3 );
 			p.setGameMode(GameMode.SURVIVAL);
-			p.setHealth(p.getMaxHealth()); p.setFoodLevel(20);
+			p.setHealth(20); p.setFoodLevel(20);
 
 			TabAPI.setPriority(GameManager.getInstance().getPlugin(), p, 2);
 			p.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "Joined arena " + gameID + ". Select a class! \nHit tab for HUD!");
@@ -279,7 +279,7 @@ public class Game {
 
 		int a = 8;
 		for(Player pl:players.keySet()){
-			int h = convertHealth(pl.getHealth());
+			int h = convertHealth(20);
 			TabAPI.setTabString(plugin, p, a, 0, pl.getName(), h);
 			TabAPI.setTabString(plugin, p, a, 1, "\u00a7a"+players.get(pl)+TabAPI.nextNull(), h);
 			TabAPI.setTabString(plugin, p, a, 2, (getPlayerClass(pl) != null)? getPlayerClass(pl).getName()+TabAPI.nextNull():"None "+TabAPI.nextNull(),h );

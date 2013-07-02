@@ -1,6 +1,6 @@
 name: SuperCraftBros
 authors: [Double0negative, MCSG]
-version: 000
+version: ${project.version}
 main: org.mcsg.double0negative.supercraftbros.SuperCraftBros
 
 commands:

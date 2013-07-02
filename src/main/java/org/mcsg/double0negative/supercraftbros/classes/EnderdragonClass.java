@@ -37,10 +37,11 @@ public class EnderdragonClass extends PlayerClassBase{
 			if(fly < 20 && canFly){
 				player.setVelocity(player.getLocation().getDirection().multiply(2));
 				Random r = new Random();
-				int h = player.getHealth();
-				player.setHealth(player.getMaxHealth());
+				//Class not being used anyway
+				//double h = player.getHealth();
+				player.setHealth(20);
 				player.getWorld().createExplosion(player.getLocation().add(r.nextInt(6) - 3, r.nextInt(6) - 3, r.nextInt(6) - 3), 2);
-				player.setHealth(h);
+				player.setHealth(20);
 				fly++;
 			}
 			else{
