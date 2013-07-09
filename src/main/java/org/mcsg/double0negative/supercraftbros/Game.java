@@ -26,10 +26,6 @@ public class Game {
 		INGAME, LOBBY, DISABLED, WAITING
 	}
 
-	//209.188.0.154
-
-
-
 	private int gameID;
 	private int spawnCount;
 	private Arena arena;
@@ -82,8 +78,8 @@ public class Game {
 			p.teleport(SettingsManager.getInstance().getGameLobbySpawn(gameID));
 
 			players.put(p ,3 );
-			p.setGameMode(GameMode.SURVIVAL);
-			p.setHealth(20); p.setFoodLevel(20);
+			p.setGameMode(GameMode.ADVENTURE);
+			p.setHealth(p.getMaxHealth()); p.setFoodLevel(20);
 
 			TabAPI.setPriority(GameManager.getInstance().getPlugin(), p, 2);
 			p.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "Joined arena " + gameID + ". Select a class! \nHit tab for HUD!");
@@ -359,6 +355,7 @@ public class Game {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	public void removePlayer(Player p, boolean b) {
 		players.remove(p);
 		p.getInventory().clear();

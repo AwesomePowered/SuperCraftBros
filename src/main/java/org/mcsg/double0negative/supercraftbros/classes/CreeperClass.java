@@ -12,7 +12,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.material.MaterialData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.mcsg.double0negative.supercraftbros.GameManager;
@@ -45,6 +44,7 @@ public class CreeperClass extends PlayerClassBase{
 	}
 	
 	
+	@SuppressWarnings("deprecation")
 	@Override 
 	public void PlayerSpawn(){
 		player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 8000, 2));
@@ -57,6 +57,7 @@ public class CreeperClass extends PlayerClassBase{
 		
 		ItemStack legs = Colorizer.setColor(new ItemStack(Material.LEATHER_LEGGINGS), 0, 200, 0);
 		legs.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
+		legs.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 1);
 		i.setLeggings(legs);
 		
 		ItemStack boot = Colorizer.setColor(new ItemStack(Material.LEATHER_BOOTS),  0, 0, 0);

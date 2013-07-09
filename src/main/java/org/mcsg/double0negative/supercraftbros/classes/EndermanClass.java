@@ -2,8 +2,7 @@ package org.mcsg.double0negative.supercraftbros.classes;
 
 import java.util.Set;
 
-
-import net.minecraft.server.v1_6_R1.Packet61WorldEvent;
+import net.minecraft.server.v1_6_R2.Packet61WorldEvent;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -26,6 +25,7 @@ public class EndermanClass extends PlayerClassBase{
 
 
 
+	@SuppressWarnings("deprecation")
 	@Override 
 	public void PlayerSpawn(){
 		player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 80000, 2));

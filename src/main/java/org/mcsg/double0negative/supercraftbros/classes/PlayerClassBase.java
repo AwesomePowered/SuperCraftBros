@@ -3,13 +3,14 @@ package org.mcsg.double0negative.supercraftbros.classes;
 
 import java.util.Set;
 
-import net.minecraft.server.v1_6_R1.Packet;
-import net.minecraft.server.v1_6_R1.Packet61WorldEvent;
+
+import net.minecraft.server.v1_6_R2.Packet;
+import net.minecraft.server.v1_6_R2.Packet61WorldEvent;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_6_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_6_R2.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
@@ -32,7 +33,7 @@ public class PlayerClassBase implements PlayerClass {
 	@Override
 	public void PlayerDamaged() {
 		if(smash){
-			player.setHealth(20);
+			player.setHealth(player.getMaxHealth());
 		}
 
 	}

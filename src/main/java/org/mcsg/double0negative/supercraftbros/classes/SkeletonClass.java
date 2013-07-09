@@ -18,6 +18,7 @@ public class SkeletonClass extends PlayerClassBase{
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("deprecation")
 	public void PlayerSpawn(){
 		player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 8000, 2));
 
@@ -37,7 +38,7 @@ public class SkeletonClass extends PlayerClassBase{
 		i.setBoots(boot);
 		
 		ItemStack i1 = new ItemStack(Material.BOW);
-		i1.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
+		i1.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 3);
 		i1.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
 		i.addItem(i1);
 		

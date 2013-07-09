@@ -7,9 +7,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<upload.dbo.category>server-mods</upload.dbo.category>
-		<upload.dbo.slug>survival-games</upload.dbo.slug>
-
 	</properties>
 	<repositories>
 		<repository>
@@ -77,11 +74,16 @@
 		</resources>
 	</build>
 	<dependencies>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>1.6.1-R0.1-SNAPSHOT</version>
-		</dependency>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId> <!-- THIS GOES FIRST -->
+            <version>1.6.2-R0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId> <!-- THIS GOES SECOND -->
+            <version>1.6.2-R0.1-SNAPSHOT</version>
+        </dependency>
 		<dependency>
 			<groupId>com.sk89q</groupId>
 			<artifactId>worldedit</artifactId>

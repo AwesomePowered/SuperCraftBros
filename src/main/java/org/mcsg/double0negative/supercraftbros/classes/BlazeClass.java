@@ -25,6 +25,7 @@ public class BlazeClass extends PlayerClassBase {
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void PlayerSpawn(){
 		player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 8000, 4));

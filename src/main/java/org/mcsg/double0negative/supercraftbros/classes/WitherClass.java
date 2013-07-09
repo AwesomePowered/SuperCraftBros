@@ -4,14 +4,13 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Wither;
 import org.bukkit.entity.WitherSkull;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.potion.PotionType;
 import org.mcsg.double0negative.supercraftbros.util.Colorizer;
 
 public class WitherClass extends PlayerClassBase{
@@ -56,9 +55,8 @@ public class WitherClass extends PlayerClassBase{
 				
 		
 		ItemStack i1 = new ItemStack(Material.BOW);
-		i1.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 5);
 		i1.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
-		i1.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 13);
+		i1.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 15);
 		i.addItem(i1);
 		
 		i.addItem(new ItemStack(Material.ARROW, 32));
@@ -66,7 +64,7 @@ public class WitherClass extends PlayerClassBase{
 		player.updateInventory();
 	}
 	
-	
+	@EventHandler
 	public void onPewPew(EntityShootBowEvent ev){
 		if (ev.getEntity() instanceof Player) {
 			Player p = (Player) ev.getEntity();
@@ -83,8 +81,4 @@ public class WitherClass extends PlayerClassBase{
 	public String getName(){
 		return "Wither";
 	}
-		
-		
-		
-	
 }

@@ -6,7 +6,6 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.util.Vector;
 import org.mcsg.double0negative.supercraftbros.GameManager;
 
 public class EnderdragonClass extends PlayerClassBase{
@@ -39,9 +38,9 @@ public class EnderdragonClass extends PlayerClassBase{
 				Random r = new Random();
 				//Class not being used anyway
 				//double h = player.getHealth();
-				player.setHealth(20);
+				player.setHealth(player.getMaxHealth());
 				player.getWorld().createExplosion(player.getLocation().add(r.nextInt(6) - 3, r.nextInt(6) - 3, r.nextInt(6) - 3), 2);
-				player.setHealth(20);
+				player.setHealth(player.getMaxHealth());
 				fly++;
 			}
 			else{

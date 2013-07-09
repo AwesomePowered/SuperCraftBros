@@ -22,6 +22,7 @@ import org.mcstats.*;
 
 public class SuperCraftBros extends JavaPlugin{
 
+	@SuppressWarnings("deprecation")
 	public void onEnable(){
 		try {
 				Metrics metrics = new Metrics(this);
